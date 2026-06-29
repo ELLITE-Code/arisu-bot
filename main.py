@@ -24,7 +24,7 @@ async def on_ready():
 
 responses = {
     "hello": "hello! (in japanese~)",
-    "daddy": "😳"
+    "daddy": "gulp"
 }
 
 @bot.event
