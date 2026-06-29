@@ -30,7 +30,12 @@ responses = {
     "dada": "not sure im ready for that yet HA HA HA",
     "dadda": "not sure im ready for that yet HA HA HA",
     "sobbing": "dont cry! im here ;)",
-    "rodrigo": "im better btw"
+    "rodrigo": "im better btw",
+    "laufey": "laufey mention",
+    "neco": "neco williams my beloved",
+    "arisu": "me mention",
+    "in borderland": "who in borderland?",
+    "son": "hi i dont know what to say im just here",
 }
 
 @bot.event
