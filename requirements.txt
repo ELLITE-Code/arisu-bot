@@ -1,6 +1,2 @@
-<<<<<<< HEAD
 discord.py
-=======
-discord.py
->>>>>>> 281d7f4fb96ff26fce54a10e27919ac306c9a3de
 python-dotenv
