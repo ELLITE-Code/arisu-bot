@@ -36,6 +36,8 @@ responses = {
     "arisu": "me mention",
     "in borderland": "who in borderland?",
     "son": "hi i dont know what to say im just here",
+    "help": "what do you need 😙",
+    "emoji test": "😳"
 }
 
 @bot.event
