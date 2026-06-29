@@ -1,5 +1,6 @@
 import discord
 import os
+import re
 
 import sys
 sys.stdout.reconfigure(encoding='utf-8')
@@ -40,7 +41,7 @@ async def on_message(message):
     content = message.content.lower()
 
     for trigger, response in responses.items():
-        if trigger in content:
+        if re.search(rf"\b{re.escape(trigger)}\b", content):
             await message.channel.send(response)
             break
 
