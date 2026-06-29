@@ -26,7 +26,10 @@ responses = {
     "hello": "hello! (in japanese~)",
     "hi": "hello! (in japanese~)",
     "daddy": "gulp",
-    "sobbing": "dont cry! im here ;)"
+    "dada": "not sure im ready for that yet HA HA HA",
+    "dadda": "not sure im ready for that yet HA HA HA",
+    "sobbing": "dont cry! im here ;)",
+    "rodrigo": "im better btw"
 }
 
 @bot.event
