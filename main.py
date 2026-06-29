@@ -40,9 +40,12 @@ async def on_message(message):
     
     content = message.content.lower()
 
+    replies = []
+
     for trigger, response in responses.items():
-        if re.search(rf"\b{re.escape(trigger)}\b", content):
-            await message.channel.send(response)
-            break
+        if re.search(rf"?<!\w{re.escape(trigger)}?!\w", content):
+            replies.append(response)
+    for reply in replies:
+        await message.channel.send(reply)
 
 bot.run(DISCORD_TOKEN)
