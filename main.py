@@ -24,6 +24,7 @@ async def on_ready():
 
 responses = {
     "hello": "hello! (in japanese~)",
+    "hi": "hello! (in japanese~)",
     "daddy": "gulp"
 }
 
