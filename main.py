@@ -43,7 +43,7 @@ async def on_message(message):
     replies = []
 
     for trigger, response in responses.items():
-        if re.search(rf"?<!\w{re.escape(trigger)}?!\w", content):
+        if re.search(rf"\b{re.escape(trigger)}\b", content):
             replies.append(response)
     for reply in replies:
         await message.channel.send(reply)
