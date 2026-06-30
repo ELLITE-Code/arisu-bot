@@ -2,6 +2,8 @@ import discord
 from discord.ext import commands
 import os
 import re
+import json
+import random
 
 import sys
 sys.stdout.reconfigure(encoding='utf-8')
@@ -9,6 +11,9 @@ sys.stdout.reconfigure(encoding='utf-8')
 from dotenv import load_dotenv
 load_dotenv()
 DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
+
+with open("trivia_questions_6500.json", "r", encoding="utf-8") as f:
+    trivia_questions = json.load(f)
 
 leah_user_id = 1283126859810209886
 
@@ -78,6 +83,8 @@ disabled_channels = [
     1509691580666347610
 ]
 
+last_trivia = {}
+
 @bot.event
 async def on_message(message):
     if message.author == bot.user:
@@ -102,7 +109,20 @@ async def on_message(message):
         await message.channel.send(reply)
 
 @bot.command()
-async def blimp(ctx):
-    await ctx.send("blimp army yay!")
+async def trivia(ctx):
+    question = random.choice(trivia_questions)
+    last_trivia[ctx.channel.id] = question
+    await ctx.send(question["q"])
+
+@bot.command()
+async def answer(ctx):
+    if ctx.channel.id not in last_trivia:
+        await ctx.send("No active trivia question!")
+        return
+
+    question = last_trivia.pop(ctx.channel.id)
+    await ctx.send(f"Answer: {question['a']}")
+
+
 
 bot.run(DISCORD_TOKEN)
