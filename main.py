@@ -65,7 +65,8 @@ responses = {
     "japan": "japan mention thats where im from",
     "tuff": "im tuffer",
     "hannah": "i agree with mimu!!",
-    "leah": "leah is my one and only true love i love leah omg leah mention my wife"
+    "leah": "leah is my one and only true love i love leah omg leah mention my wife",
+    "happy": "im happy all the time but only when im with leah"
 }
 
 special_replies = {
