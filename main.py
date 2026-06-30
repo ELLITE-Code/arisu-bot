@@ -73,9 +73,16 @@ special_replies = {
     
 }
 
+disabled_channels = [
+    1509691580666347610
+]
+
 @bot.event
 async def on_message(message):
     if message.author == bot.user:
+        return
+    
+    if message.channel.id in disabled_channels:
         return
     
     if message.author.id in special_replies:
