@@ -26,6 +26,7 @@ async def on_ready():
 responses = {
     "hello": "hello! (in japanese~)",
     "hi": "hello! (in japanese~)",
+    "hii": "hello! (in japanese~)",
     "daddy": "gulp 😳",
     "dada": "not sure im ready for that yet HA HA HA",
     "dadda": "not sure im ready for that yet HA HA HA",
@@ -38,16 +39,20 @@ responses = {
     "in borderland": "who in borderland? 😳",
     "son": "hi i dont know what to say im just here 😉",
     "help": "what do you need 😙",
+    "helpp": "what do you need 😙",
     "chud": "im a chud im a chud im a fat little chud",
     "fav food": "pizza idk",
     "fav show": "alice in borderland duh 🤣",
     "nope": "YUP!",
+    "nopee": "YUP!",
     "gay": "im gay",
     "67": "SIX SEVENN",
     "bye": "no come back 😘🫦",
     "goodnight": "goodnight~",
     "gn": "goodnight~",
-    "ride": "😳😏"
+    "gnn": "goodnight~",
+    "ride": "😳😏",
+    "japan": "japan mention thats where im from"
 }
 
 @bot.event
