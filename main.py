@@ -102,7 +102,7 @@ async def on_message(message):
         await message.channel.send(reply)
 
 @bot.command()
-async def hi(ctx):
-    await ctx.send("hello")
+async def blimp(ctx):
+    await ctx.send("blimp army yay!")
 
 bot.run(DISCORD_TOKEN)
