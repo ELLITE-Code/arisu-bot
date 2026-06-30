@@ -15,6 +15,13 @@ DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
 with open("trivia_questions_6500.json", "r", encoding="utf-8") as f:
     trivia_questions = json.load(f)
 
+current_question = None
+
+def normalise_answer(text):
+    text = text.lower().strip()
+    text = re.sub(r"^answer\s*:\s*", "", text)
+    return text
+
 leah_user_id = 1283126859810209886
 
 intents = discord.Intents.default()
@@ -115,6 +122,12 @@ async def trivia(ctx):
     await ctx.send(question["q"])
 
 @bot.command()
+async def skip(ctx):
+    question = random.choice(trivia_questions)
+    last_trivia[ctx.channel.id] = question
+    await ctx.send(question["q"])
+
+@bot.command()
 async def answer(ctx):
     if ctx.channel.id not in last_trivia:
         await ctx.send("No active trivia question!")
@@ -123,6 +136,22 @@ async def answer(ctx):
     question = last_trivia.pop(ctx.channel.id)
     await ctx.send(f"Answer: {question['a']}")
 
+@bot.event
+async def on_message(message):
+    global current_question
 
+    if message.author == bot.user:
+        return
+    
+    await bot.process_commands(message)
+
+    if current_question is None:
+        return
+
+    user_answer = normalise_answer(message.content)
+    correct_answer = normalise_answer(current_question["a"])
+
+    if user_answer == correct_answer:
+        message.channel.send(f"Well done! The answer is {current_question['a']}")
 
 bot.run(DISCORD_TOKEN)
