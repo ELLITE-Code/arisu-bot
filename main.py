@@ -15,7 +15,7 @@ leah_user_id = 1283126859810209886
 intents = discord.Intents.default()
 intents.message_content = True
 
-bot = discord.Client(intents=intents)
+bot = commands.bot(command_prefix="!",intents=intents)
 
 @bot.event
 async def on_ready():
@@ -47,6 +47,7 @@ responses = {
     "neco": "neco williams my beloved",
     "arisu": "me mention",
     "in borderland": "who in borderland? 😳",
+    "aib": "who in borderland? 😳",
     "son": "hi i dont know what to say im just here 😉",
     "help": "what do you need 😙",
     # "helpp": "what do you need 😙",
