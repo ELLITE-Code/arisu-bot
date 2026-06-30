@@ -65,11 +65,11 @@ responses = {
     "japan": "japan mention thats where im from",
     "tuff": "im tuffer",
     "hannah": "i agree with mimu!!",
-    "love": "leah is my one and only true love"
+    "leah": "leah is my one and only true love i love leah omg leah mention my wife"
 }
 
 special_replies = {
-    1283126859810209886: "leah is my one and only true love hi leah"
+    
 }
 
 @bot.event
