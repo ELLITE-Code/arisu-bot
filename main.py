@@ -15,7 +15,7 @@ leah_user_id = 1283126859810209886
 intents = discord.Intents.default()
 intents.message_content = True
 
-bot = commands.bot(command_prefix="!",intents=intents)
+bot = commands.Bot(command_prefix="!",intents=intents)
 
 @bot.event
 async def on_ready():
@@ -83,6 +83,8 @@ async def on_message(message):
     if message.author == bot.user:
         return
     
+    await bot.process_commands(message)
+
     if message.channel.id in disabled_channels:
         return
     
@@ -98,5 +100,9 @@ async def on_message(message):
             replies.append(response)
     for reply in replies:
         await message.channel.send(reply)
+
+@bot.command()
+async def hi(ctx):
+    await ctx.send("hello")
 
 bot.run(DISCORD_TOKEN)
