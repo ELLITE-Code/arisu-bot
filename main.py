@@ -52,7 +52,9 @@ responses = {
     "gn": "goodnight~",
     "gnn": "goodnight~",
     "ride": "😳😏",
-    "japan": "japan mention thats where im from"
+    "japan": "japan mention thats where im from",
+    "tuff": "im tuffer",
+    "hannah": "i agree with mimu!!"
 }
 
 @bot.event
