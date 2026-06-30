@@ -10,6 +10,8 @@ from dotenv import load_dotenv
 load_dotenv()
 DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
 
+leah_user_id = 1283126859810209886
+
 intents = discord.Intents.default()
 intents.message_content = True
 
@@ -62,13 +64,21 @@ responses = {
     "ride": "😳😏",
     "japan": "japan mention thats where im from",
     "tuff": "im tuffer",
-    "hannah": "i agree with mimu!!"
+    "hannah": "i agree with mimu!!",
+    "love": "leah is my one and only true love"
+}
+
+special_replies = {
+    1283126859810209886: "leah is my one and only true love hi leah"
 }
 
 @bot.event
 async def on_message(message):
     if message.author == bot.user:
         return
+    
+    if message.author.id in special_replies:
+        await message.channel.send(special_replies[message.author.id])
     
     content = message.content.lower()
 
