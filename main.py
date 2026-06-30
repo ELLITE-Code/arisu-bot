@@ -114,6 +114,16 @@ async def on_message(message):
             replies.append(response)
     for reply in replies:
         await message.channel.send(reply)
+    
+    if message.channel.id in last_trivia:
+        question = last_trivia[message.channel.id]
+
+        user_answer = normalise_answer(message.content)
+        correct_answer = normalise_answer(question["a"])
+
+        if user_answer == correct_answer:
+            await message.channel.send(f"Well done! The answer is {question['a']}")
+            del last_trivia[message.channel.id]
 
 @bot.command()
 async def trivia(ctx):
@@ -135,23 +145,6 @@ async def answer(ctx):
 
     question = last_trivia.pop(ctx.channel.id)
     await ctx.send(f"Answer: {question['a']}")
-
-@bot.event
-async def on_message(message):
-    global current_question
-
-    if message.author == bot.user:
-        return
     
-    await bot.process_commands(message)
-
-    if current_question is None:
-        return
-
-    user_answer = normalise_answer(message.content)
-    correct_answer = normalise_answer(current_question["a"])
-
-    if user_answer == correct_answer:
-        message.channel.send(f"Well done! The answer is {current_question['a']}")
 
 bot.run(DISCORD_TOKEN)
