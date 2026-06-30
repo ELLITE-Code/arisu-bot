@@ -25,7 +25,7 @@ async def on_ready():
     print("Arisu is in " + str(guild_count) + " server(s).")
 
     await bot.change_presence(
-        activity=discord.Game("im"),
+        activity=discord.Game("i am daddy arisu"),
         status=discord.Status.online
     )
 
