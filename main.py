@@ -1,4 +1,5 @@
 import discord
+from discord.ext import commands
 import os
 import re
 
@@ -22,6 +23,13 @@ async def on_ready():
         print(f"- {guild.id} (name: {guild.name})")
         guild_count += 1
     print("Arisu is in " + str(guild_count) + " server(s).")
+
+    await bot.change_presence(
+        activity=discord.Game("im"),
+        status=discord.Status.online
+    )
+
+    print(f"Logged in as {bot.user}")
 
 responses = {
     "hello": "hello! (in japanese~)",
