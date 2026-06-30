@@ -46,6 +46,7 @@ responses = {
     "67": "SIX SEVENN",
     "bye": "no come back 😘🫦",
     "goodnight": "goodnight~",
+    "gn": "goodnight~",
     "ride": "😳😏"
 }
 
