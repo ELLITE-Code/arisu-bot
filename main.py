@@ -30,6 +30,7 @@ responses = {
     "dada": "not sure im ready for that yet HA HA HA",
     "dadda": "not sure im ready for that yet HA HA HA",
     "sobbing": "dont cry! im here ;)",
+    "crine": "dont cry! im here ;)",
     "rodrigo": "im better btw 😝",
     "laufey": "laufey mention",
     "neco": "neco williams my beloved",
@@ -40,7 +41,12 @@ responses = {
     "chud": "im a chud im a chud im a fat little chud",
     "fav food": "pizza idk",
     "fav show": "alice in borderland duh 🤣",
-    "nope": "YUP!"
+    "nope": "YUP!",
+    "gay": "im gay",
+    "67": "SIX SEVENN",
+    "bye": "no come back 😘🫦",
+    "goodnight": "goodnight~",
+    "ride": "😳😏"
 }
 
 @bot.event
