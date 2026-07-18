@@ -12,7 +12,7 @@ from dotenv import load_dotenv
 load_dotenv()
 DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
 
-with open("trivia_questions_6500.json", "r", encoding="utf-8") as f:
+with open("trivia_questions_list.json", "r", encoding="utf-8") as f:
     trivia_questions = json.load(f)
 
 current_question = None
@@ -44,6 +44,11 @@ async def on_ready():
     )
 
     print(f"Logged in as {bot.user}")
+
+convo_starters = [
+    "Who's a niche hear me out?",
+    "Test"
+]
 
 responses = {
     # "hello": "hello! (in japanese~)",
@@ -146,5 +151,9 @@ async def answer(ctx):
     question = last_trivia.pop(ctx.channel.id)
     await ctx.send(f"Answer: {question['a']}")
     
+@bot.command()
+async def convo(ctx):
+    convoStarter = random.choice(convo_starters)
+    await ctx.send(convoStarter)
 
 bot.run(DISCORD_TOKEN)
